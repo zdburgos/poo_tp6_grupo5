@@ -1,6 +1,6 @@
-package ar.edu.unju.fi.practico6;
+package ar.edu.unju.fi.poo.punto1;
 
-import ar.edu.unju.fi.practico6.model.*;
+import ar.edu.unju.fi.poo.punto1.model.*;
 import java.time.LocalTime;
 import java.time.ZoneId;
 import java.util.ArrayList;
