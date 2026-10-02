@@ -33,7 +33,63 @@ public class ManagerEmpleado {
         empleados.add(l1);
         empleados.add(l2);
     }
+    
+    public boolean agregarEmpleado(Empleado empleado) {
+        if (buscarLegajo(empleado.getLegajo()) != null) {
+            return false;
+        }
+        empleados.add(empleado);
+        return true;
+    }
+    
+    public Empleado buscarLegajo(int legajo) {
+        for (Empleado empleado : empleados) {
+            if (empleado.getLegajo() == legajo) {
+                return empleado;
+            }
+        }
+        return null;
+    }
+    
+    public List<Administrativo> obtenerAdministrativosPorCategoria(String categoria) {
+        List<Administrativo> resultado = new ArrayList<>();
 
+        for (Empleado empleado : empleados) {
+            if (empleado instanceof Administrativo) {
+                Administrativo administrativo = (Administrativo) empleado;
+                if (administrativo.getCategoria().equalsIgnoreCase(categoria)) {
+                    resultado.add(administrativo);
+                }
+            }
+        }
+        return resultado;
+    }
+    
+    public double calcularNetoAcumulado(String tipo) {
+        double total = 0;
+
+        for (Empleado empleado : empleados) {
+            if (esTipoEmpleado(empleado, tipo)) {
+                total += empleado.calcularSueldoNeto();
+            }
+        }
+        return total;
+    }
+
+    //Metodo auxiliar
+    private boolean esTipoEmpleado(Empleado empleado, String tipo) {
+        if (tipo.equalsIgnoreCase("profesional")) {
+            return empleado instanceof Profesional;
+        }
+        if (tipo.equalsIgnoreCase("administrativo")) {
+            return empleado instanceof Administrativo;
+        }
+        if (tipo.equalsIgnoreCase("limpieza")) {
+            return empleado instanceof Limpieza;
+        }
+        return false;
+    }
+    
     //Getters and Setters
     public List<Empleado> getEmpleados() {return empleados;}
     public void setEmpleados(List<Empleado> empleados) {this.empleados = empleados;}
