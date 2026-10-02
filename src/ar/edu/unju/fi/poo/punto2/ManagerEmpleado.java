@@ -23,8 +23,8 @@ public class ManagerEmpleado {
         Administrativo a3 = new Administrativo(5, 34567860, "Susana Gomez",LocalDate.of(2022, 3, 10),1,"A");
 
         // Limpieza
-        Limpieza l1 = new Limpieza(5, 56789012, "Marta Diaz",LocalDate.of(2022, 1, 10),2);
-        Limpieza l2 = new Limpieza( 6, 67890123, "Juan Perez",LocalDate.of(2017, 11, 5), 1);
+        Limpieza l1 = new Limpieza(6, 56789012, "Marta Diaz",LocalDate.of(2022, 1, 10),2);
+        Limpieza l2 = new Limpieza(7, 67890123, "Juan Perez",LocalDate.of(2017, 11, 5), 1);
 
         // Agregar empleados a la lista
         empleados.add(p1);
