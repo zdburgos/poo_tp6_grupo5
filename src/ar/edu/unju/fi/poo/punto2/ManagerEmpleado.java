@@ -20,6 +20,7 @@ public class ManagerEmpleado {
         // Administrativos
         Administrativo a1 = new Administrativo(3, 34567890, "Laura Gomez",LocalDate.of(2021, 2, 20),3,"A");
         Administrativo a2 = new Administrativo(4, 45678901, "Pedro Sanchez",LocalDate.of(2019, 7, 1),0,"B");
+        Administrativo a3 = new Administrativo(5, 34567860, "Susana Gomez",LocalDate.of(2022, 3, 10),1,"A");
 
         // Limpieza
         Limpieza l1 = new Limpieza(5, 56789012, "Marta Diaz",LocalDate.of(2022, 1, 10),2);
@@ -30,6 +31,7 @@ public class ManagerEmpleado {
         empleados.add(p2);
         empleados.add(a1);
         empleados.add(a2);
+        empleados.add(a3);
         empleados.add(l1);
         empleados.add(l2);
     }
